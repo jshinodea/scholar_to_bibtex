@@ -34,7 +34,7 @@ docker run -p 5000:5000 --env-file .env scholar_to_bibtex
 ```
 4. Get a .bib file from the API:
 ```bash
-curl -X POST http://localhost:5000/convert -H "Content-Type: application/json" -d '{"scholar_url": "scholar_url"}' --output citations.bib
+curl -X POST http://localhost:5000/convert -H "Content-Type: application/json" -d "{\"scholar_url\": \"PUT URL HERE\"}" --output citations.bib
 ``` 
 
 ### Local Development
