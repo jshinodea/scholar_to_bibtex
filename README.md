@@ -18,8 +18,8 @@ A Flask API that converts Google Scholar publications to BibTeX format using Ser
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/scholar-bibtex-api.git
-cd scholar-bibtex-api
+git clone https://github.com/jshinodea/scholar_to_bibtex
+cd scholar_to_bibtex
 ```
 
 2. Create a `.env` file:
@@ -29,9 +29,13 @@ SERPAPI_KEY=your_api_key_here
 
 3. Build and run the Docker container:
 ```bash
-docker build -t scholar-bibtex-api .
-docker run -p 5000:5000 --env-file .env scholar-bibtex-api
+docker build -t scholar_to_bibtex .
+docker run -p 5000:5000 --env-file .env scholar_to_bibtex
 ```
+4. Get a .bib file from the API:
+```bash
+curl -X POST http://localhost:5000/convert -H "Content-Type: application/json" -d '{"scholar_url": "scholar_url"}' --output citations.bib
+``` 
 
 ### Local Development
 
